@@ -1,0 +1,37 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h1>ADD CATEGORIES</h1>
+        &nbsp; &nbsp; &nbsp;
+        <form #categoryForm="ngForm" (ngSubmit)="categoryForm.valid">
+        <div class="messages"></div>
+        <div class="controls">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_message">Name</label>
+                <input id="form_message" type="text" name="Ntc_categoryName" class="form-control" [(ngModel)]="category.Ntc_categoryName" #Ntc_categoryName="ngModel"placeholder="Please enter your category name" required="required" data-error="name is required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+          <!-- <div class="row"> -->
+            <div class="col-md-8">
+              <div class="form-group">
+                <label for="form_description">Description</label>
+                <textarea id="form_description" name="Ntc_categoryDescription" class="form-control" [(ngModel)]="category.Ntc_categoryDescription" #Ntc_categoryDescription="ngModel" placeholder="please enter category description" rows="4" required="required" data-error="Please,leave us a description"></textarea>
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="form-group form-button">
+              <button type="button" class="btn btn-primary btn-sm" style="margin-right: 4%"[disabled]="(!categoryForm.valid)" 
+              (click)="add(category)">ADD</button>
+            </div>
+        <!-- </div> -->
+      </div>
+    </div>
+        </form>
+        </div>
+        </div>
+    </div>
+</body>

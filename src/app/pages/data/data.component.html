@@ -1,0 +1,79 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h1>Send Notifications</h1>
+        &nbsp; &nbsp; &nbsp;
+        <form #dataForm="ngForm" (ngSubmit)="dataForm.valid">
+        <div class="messages"></div>
+        <div class="controls">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_message">Message </label>
+                <input id="form_message" type="text" name="message" class="form-control" [(ngModel)]="data.message" #message="ngModel"placeholder="Please enter your message" required="required" data-error="message is required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_title">Title </label>
+                <input id="form_title" type="text" name="title" class="form-control" [(ngModel)]="data.title" #title="ngModel" placeholder="Please enter your Title" required="required" data-error="Title is required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_senderid">Sender ID </label>
+                <input id="form_senderid" type="text" name="senderid" class="form-control" [(ngModel)]="data.senderid" #senderid="ngModel" placeholder="Please enter your id" required="required" data-error=" id is required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <!-- <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_url">Url</label>
+                <input id="form_url" type="text" name="url" class="form-control"  [(ngModel)]="data.url" #url="ngModel" placeholder="Please enter your url">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div> -->
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_categories">Categories</label>
+                <select id="form_categories" type="text" name="categories" class="form-control" [(ngModel)]="data.categories" #categories="ngModel">
+                  <option value="undefined">Select category</option>
+                  <option  *ngFor="let a of totalData"  placeholder="categories" value={{a.Ntc_categoryName}}>{{a.Ntc_categoryName}}</option>
+                </select>
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_token">Token</label>
+                <textarea id="form_token" name="token" class="form-control"  [(ngModel)]="data.token" #token="ngModel" placeholder="Registerd Tokens" rows="4" required="required" data-error="Please,leave us a tokens"></textarea>
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <!-- <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_phone">ids</label>
+                <textarea id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone" rows="4" ></textarea>
+                <div class="help-block with-errors"></div>
+              </div>
+            </div> -->
+            <div class="form-group form-button">
+              <button type="submit" class="btn btn-primary btn-sm" style="margin-right: 4%"
+              (click)="adddetails(data)">submit</button>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

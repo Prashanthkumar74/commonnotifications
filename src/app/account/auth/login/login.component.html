@@ -1,0 +1,33 @@
+<section class="sign-in">
+    <div class="container">
+        <div class="signin-content">
+            <div class="signin-image">
+                <figure><img src="../../assets/signin-image.jpg" alt="sign-in image"></figure>
+                <p>Don't have an account?<a class="active link-btn" href="#">Register</a></p>
+            </div>
+            <div class="signin-form">
+                <h2 class="form-title">Login</h2>
+                <form name="loginform" #lf="ngForm" novalidate>
+                    <div [ngClass]="{ 'has-error': lf.submitted && !SUi_loginName.valid }">
+                        <div class="form-group">
+                            <input type="text" id="SUi_loginName" name="SUi_loginName" placeholder="username" [(ngModel)]="Login.SUi_loginName"  minlength="3" #SUi_loginName="ngModel" required>
+                        </div>
+                        <div *ngIf="SUi_loginName.touched" class="help-block message" [hidden]='SUi_loginName.valid' style="color:red"> User name is required</div>
+                    </div>
+                    <div [ngClass]="{'has-error': lf.submitted && !SUi_encryptPassword.valid }">
+                        <div class="form-group">
+                            <input type="password" id="SUi_encryptPassword" name="SUi_encryptPassword" autocomplete="false" placeholder="Password" [(ngModel)]="Login.SUi_encryptPassword"  required (cut)="$event.preventDefault()" (copy)="$event.preventDefault()" (paste)="$event.preventDefault()" minlength="8"  #SUi_encryptPassword= "ngModel"
+                                maxlength="18" required>
+                        </div>
+                        <div *ngIf="SUi_encryptPassword.touched" class="help-block message" [hidden]='SUi_encryptPassword.valid' style="color:red">Password is required</div>
+                    </div>
+                    <div class="form-group form-button">
+                      <button type="submit" class="btn btn-primary btn-sm" style="margin-right: 4%"
+                      (click)="logins(Login)">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </section>
+  

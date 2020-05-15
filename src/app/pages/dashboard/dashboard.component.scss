@@ -1,0 +1,47 @@
+
+
+agm-map {
+  height: 224px;
+}
+
+#activity-container {
+    height: 168px;
+}
+
+
+/* .table, th, td {  
+  border: 1px solid black;  
+  border-collapse: collapse;  
+}   */
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid rgb(242,242,247);
+}
+th, td {
+  text-align:left;
+  padding: 8px;
+  font-size: 12px;
+  border: 0.5px solid rgb(242,242,247);
+  border-collapse: collapse;
+}
+.center {
+  display: block;
+  margin-left: 40%;
+  margin-right:35%;
+  width:10%; 
+  height:10%;
+}
+.but1{
+  background: linear-gradient(95deg, #5533ff 40%, #25ddf5 100%);
+  color:rgb(206, 206, 233);
+}
+// table.dt-responsive.nowrap tr td 
+// table.dt-responsive.nowrap th 
+// {
+// white-space: nowrap;
+// }
+// .table-outer{
+// max-width: 800px;
+// overflow-x: auto;
+// }

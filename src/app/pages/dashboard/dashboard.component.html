@@ -1,0 +1,61 @@
+<div class="container-fluid">
+      <div class="card-box">
+          <div class="row pt-2 pb-2 mb-4">
+            <div class="col-sm-5" >
+              <input type="date" #date name="date" id=""  class="form-control">
+              <button (click)="Date(date)"  class="btn btn-success but1" style="float:middle">select</button>
+            </div>
+            <div class="col-sm-4 p-0 m-0">
+              <button (click)="exportToExcel()" class="btn btn-success but1"
+              style="float:middle">Download</button> 
+            </div>
+            </div>
+          </div>
+
+          <form class=" row detailsform" (ngSubmit)="getHQ(reportmodel)">
+            <select class="form-control" name="HQ"  (change)="getHQ(reportmodel)" class="opt1">
+                <option value="undefined">Select HQ</option>
+                <option *ngFor="let opt of HQ"  placeholder="HQ" value={{opt.HQ}}>{{opt.HQ}}</option>
+            </select   >
+        </form>
+      <div class="table-outer">
+              <table class="table table-bordered dt-responsive nowrap" style="padding:0px;">
+                <thead>
+                  <tr>
+                  <th>HQ</th>
+                  <th>POINT</th>
+                  <th>ROUTE</th>
+                  <th>SO</th>
+                  <th>OUTLET ID</th>
+                  <th>OUTLET</th>
+                  <th>CATEGORY</th>
+                  <th>PRODUCT</th>
+                  <th>SKU</th>
+                  <th>STOCK</th>
+                  <th>UPDATE BY DATE</th>
+                  <th>UPDATE BY</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let a of tableData">
+                  <tr>
+              <td>{{a.HQ}}</td>
+              <td>{{a.Point}}</td>
+              <td>{{a.Route}}</td>
+              <td>{{a.SO}}</td>
+              <td>{{a.outletID}}</td>
+              <td>{{a.outlet}}</td>
+              <td>{{a.category}}</td>
+              <td>{{a.product}}</td>
+              <td>{{a.sku}}</td>
+              <td>{{a.stock}}</td>
+              <td>{{a.updateDate}}</td>
+              <td>{{a.updatedBy}}</td>
+              </tr>
+                </tbody>
+              </table>
+      </div>
+              <div  *ngIf="tableData.length==0"  class="center">
+                <img src="../../../assets/images/nodata.png"/> 
+          </div>
+      </div>
+    
